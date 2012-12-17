@@ -1051,6 +1051,9 @@ cc.Node = cc.Class.extend(/** @lends cc.Node# */{
         cleanup = cleanup || true;
         if (this._children.indexOf(child) > -1) {
             this._detachChild(child, cleanup);
+            for (var i in child) {
+                child[i] = null;
+            }
         }
 
         this.setNodeDirty();
