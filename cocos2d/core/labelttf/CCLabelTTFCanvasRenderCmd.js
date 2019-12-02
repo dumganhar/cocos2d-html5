@@ -361,7 +361,7 @@ cc.LabelTTF._firsrEnglish = /^[a-zA-Z0-9ÄÖÜäöüßéèçàùêâîôû]/;
             locStrokeSize = node._strokeSize;
 
         //this is fillText for canvas
-        if (context.font !== this._fontStyleStr)
+        if (context.font !== this._fontStyleStr || window.yyrt)
             context.font = this._fontStyleStr;
         context.fillStyle = this._fillColorStr;
 

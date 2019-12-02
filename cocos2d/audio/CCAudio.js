@@ -425,10 +425,15 @@ cc.Audio.WebAudio.prototype = {
 
             // 加载统一使用dom
             var dom = document.createElement('audio');
+            if (window.yyrt) {
+                dom.src = realUrl;
+            }
+            else {
             for (var i=0; i<num; i++) {
                 var source = document.createElement('source');
                 source.src = cc.path.changeExtname(realUrl, typeList[i]);
                 dom.appendChild(source);
+            }
             }
 
             audio.setElement(dom);
